@@ -135,6 +135,12 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
 
 				.antMatchers("/cherchertiquete").permitAll()
+				.antMatchers("/cherchertiquetes").permitAll()
+
+				.antMatchers("/chercherteleworks").permitAll()
+
+				.antMatchers("/chercherDparts").permitAll()
+
 
 				.antMatchers("/DeletedemandDepart/{id_demandeDepart}").permitAll()
 				.antMatchers("/demaneDepart/{id_demandeDepart}").permitAll()

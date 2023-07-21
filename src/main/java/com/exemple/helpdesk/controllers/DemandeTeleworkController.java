@@ -3,6 +3,7 @@ package com.exemple.helpdesk.controllers;
 import com.exemple.helpdesk.Pojo.DemandeTeleworkPojo;
 import com.exemple.helpdesk.models.DemandeRetourVoucher;
 import com.exemple.helpdesk.models.DemandeTelework;
+import com.exemple.helpdesk.models.Tiquete;
 import com.exemple.helpdesk.models.User;
 import com.exemple.helpdesk.repository.DemandeTeleworkRepository;
 import com.exemple.helpdesk.repository.UserRepository;
@@ -166,6 +167,13 @@ public class DemandeTeleworkController {
     public long getCountss(@PathVariable Long id){
 
         return demandeTeleworkRepository.find_id_employer(id).stream().count();
+    }
+    @RequestMapping( value="/chercherteleworks",method= RequestMethod.GET)
+    public Collection<DemandeTelework> chercherDemandess(@RequestParam(name = "mc",defaultValue = "") String mc){
+        if(mc!=null){
+            return demandeTeleworkRepository.chercherss(mc);
+        }
+        return demandeTeleworkRepository.findAll();
     }
 
 

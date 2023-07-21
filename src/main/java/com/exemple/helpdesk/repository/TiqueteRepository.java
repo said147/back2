@@ -18,4 +18,7 @@ public interface TiqueteRepository extends JpaRepository<Tiquete,Long> {
     @Query("select dem from Tiquete dem  where status like :x")
     public List<Tiquete> cherchers(@Param("x")String st);
 
+    @Query("select dem from Tiquete dem  where date like :x")
+    public List<Tiquete> chercherss(@Param("x")String st);
+
 }

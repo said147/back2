@@ -117,4 +117,11 @@ public class TiqueteController {
         }
         return tiqueteRepository.findAll();
     }
+    @RequestMapping( value="/cherchertiquetes",method= RequestMethod.GET)
+    public Collection<Tiquete> chercherDemandes(@RequestParam(name = "mc",defaultValue = "") String mc){
+        if(mc!=null){
+            return tiqueteRepository.cherchers(mc);
+        }
+        return tiqueteRepository.findAll();
+    }
 }

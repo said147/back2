@@ -73,4 +73,12 @@ public class DemandeDepartController {
         this.demandeDepartRepository.deleteById(id_demandeDepart);
         return demandeDepartRepository.findAll();
     }
+
+    @RequestMapping( value="/chercherDparts",method= RequestMethod.GET)
+    public Collection<DemandeDepart> chercherDemandessee(@RequestParam(name = "mc",defaultValue = "") String mc){
+        if(mc!=null){
+            return demandeDepartRepository.chercherss(mc);
+        }
+        return demandeDepartRepository.findAll();
+    }
 }
